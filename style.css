@@ -1,0 +1,116 @@
+* { box-sizing: border-box; }
+:root {
+  --bg: #f4ffd5;
+  --panel: #161a2b;
+  --text: #000000;
+  --muted: #a7b0c0;
+  --key: #ffffff;
+  --key-op: #eefd7d;
+  --key-func: #eefd7d;
+  --accent: #e0ff63;
+  --accent-strong: #e0ff63;
+  --shadow: 0 10px 25px rgba(0,0,0,.35);
+  --radius: 20px;
+  --radius-sm: 14px;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(1200px 600px at 70% -10%, #b9cf94 0%, transparent 60%),
+              radial-gradient(900px 500px at -10% 110%, #fffb96 0%, transparent 60%), var(--bg);
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.app {
+  width: 100%;
+  max-width: 380px;
+}
+
+.calc {
+  background:#fffb96;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.display {
+  background:#ffffff;
+  border-radius: var(--radius);
+  padding: 18px 16px;
+  min-height: 92px;
+  display: grid;
+  align-content: center;
+  gap: 6px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+.display-prev {
+  min-height: 20px;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: right;
+  word-wrap: break-word;
+  user-select: none;
+}
+
+.display-current {
+  font-weight: 700;
+  font-size: clamp(28px, 6vw, 36px);
+  text-align: right;
+  letter-spacing: 0.3px;
+  word-wrap: break-word;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.key {
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  font-size: 18px;
+  color: var(--text);
+  background: var(--key);
+  cursor: pointer;
+  transition: transform .05s ease, background .2s ease, box-shadow .2s ease;
+  box-shadow: 0 6px 14px rgba(0,0,0,.2);
+  user-select: none;
+}
+
+.key:hover { filter: brightness(1.08); }
+.key:active { transform: translateY(2px) scale(0.99); }
+
+.key-op { background: var(--key-op); }
+.key-func { background: var(--key-func); }
+.key-equals { background: linear-gradient(180deg, var(--accent) 0%, var(--accent-strong) 100%); font-weight: 700; }
+
+.hint {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 14px 4px 2px;
+  text-align: center;
+}
+
+/* Better focus states for accessibility */
+.key:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+/* Small screens */
+@media (max-width: 360px) {
+  .key { padding: 14px; font-size: 16px; }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <main class="app">
+    <div class="calc">
+      <div class="display" aria-live="polite" aria-atomic="true">
+        <div class="display-prev" id="prevOperand"></div>
+        <div class="display-current" id="currentOperand">0</div>
+      </div>
+
+      <div class="keys" role="group" aria-label="Calculator keys">
+        <button class="key key-func" data-action="clear" aria-label="All Clear (AC)">AC</button>
+        <button class="key key-func" data-action="delete" aria-label="Delete (Backspace)">DEL</button>
+        <button class="key key-op" data-operation="percent" aria-label="Percent">%</button>
+        <button class="key key-op" data-operation="divide" aria-label="Divide">÷</button>
+
+        <button class="key" data-number="7">7</button>
+        <button class="key" data-number="8">8</button>
+        <button class="key" data-number="9">9</button>
+        <button class="key key-op" data-operation="multiply" aria-label="Multiply">×</button>
+
+        <button class="key" data-number="4">4</button>
+        <button class="key" data-number="5">5</button>
+        <button class="key" data-number="6">6</button>
+        <button class="key key-op" data-operation="subtract" aria-label="Subtract">−</button>
+
+        <button class="key" data-number="1">1</button>
+        <button class="key" data-number="2">2</button>
+        <button class="key" data-number="3">3</button>
+        <button class="key key-op" data-operation="add" aria-label="Add">+</button>
+
+        <button class="key key-func" data-action="toggle-sign" aria-label="Toggle Sign">±</button>
+        <button class="key" data-number="0">0</button>
+        <button class="key" data-decimal="." aria-label="Decimal">.</button>
+        <button class="key key-equals" data-action="equals" aria-label="Equals">=</button>
+      </div>
+
+     
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
